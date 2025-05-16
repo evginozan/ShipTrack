@@ -24,7 +24,6 @@ fun SplashScreen(navController: NavController) {
             .background(MaterialTheme.colorScheme.primary),
         contentAlignment = Alignment.Center
     ) {
-        // Logo ve uygulama adı
         Text(
             text = "KARGO TAKİP",
             color = MaterialTheme.colorScheme.onPrimary,
@@ -32,7 +31,6 @@ fun SplashScreen(navController: NavController) {
             fontWeight = FontWeight.Bold
         )
 
-        // 2 saniye bekle ve sonra giriş ekranına git
         LaunchedEffect(key1 = true) {
             delay(2000)
             navController.navigate(Screen.Login.route) {

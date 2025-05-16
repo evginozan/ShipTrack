@@ -27,7 +27,6 @@ class LoginViewModel(
                 login()
             }
             is LoginEvent.NavigateToRegister -> {
-                // Navigation will be handled by the composable
             }
         }
     }

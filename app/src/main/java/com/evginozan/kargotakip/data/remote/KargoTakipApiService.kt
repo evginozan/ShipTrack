@@ -28,14 +28,14 @@ class KargoTakipApiService(private val client: HttpClient) {
         return client.post("$baseUrl/api/auth/login") {
             contentType(ContentType.Application.Json)
             setBody(request)
-        }.body()  // body() metodu eklendi
+        }.body()
     }
 
     suspend fun register(request: RegisterRequestDto): MessageResponseDto {
         return client.post("$baseUrl/api/auth/register") {
             contentType(ContentType.Application.Json)
             setBody(request)
-        }.body()  // body() metodu eklendi
+        }.body()
     }
 
     // Cargo Service
@@ -53,7 +53,7 @@ class KargoTakipApiService(private val client: HttpClient) {
             headers {
                 append(HttpHeaders.Authorization, "Bearer ${TokenManager.getToken()}")
             }
-        }.body()  // body() metodu eklendi
+        }.body()
     }
 
     suspend fun getCargosByReceiverPhone(phone: String): List<CargoResponseDto> {
@@ -61,7 +61,7 @@ class KargoTakipApiService(private val client: HttpClient) {
             headers {
                 append(HttpHeaders.Authorization, "Bearer ${TokenManager.getToken()}")
             }
-        }.body()  // body() metodu eklendi
+        }.body()
     }
 
     suspend fun getDeliveryCode(trackingCode: String): DeliveryCodeResponseDto {
@@ -69,7 +69,7 @@ class KargoTakipApiService(private val client: HttpClient) {
             headers {
                 append(HttpHeaders.Authorization, "Bearer ${TokenManager.getToken()}")
             }
-        }.body()  // body() metodu eklendi
+        }.body()
     }
 
     suspend fun verifyDeliveryCode(trackingCode: String, deliveryCode: String): CargoResponseDto {
@@ -79,19 +79,19 @@ class KargoTakipApiService(private val client: HttpClient) {
             headers {
                 append(HttpHeaders.Authorization, "Bearer ${TokenManager.getToken()}")
             }
-        }.body()  // body() metodu eklendi
+        }.body()
     }
 
     // Branch Service
     suspend fun getAllBranches(): List<BranchDto> {
-        return client.get("$baseUrl/api/branches").body()  // body() metodu eklendi
+        return client.get("$baseUrl/api/branches").body()
     }
 
     suspend fun getBranchById(id: Long): BranchDto {
-        return client.get("$baseUrl/api/branches/$id").body()  // body() metodu eklendi
+        return client.get("$baseUrl/api/branches/$id").body()
     }
 
     suspend fun getBranchesByCity(city: String): List<BranchDto> {
-        return client.get("$baseUrl/api/branches/city/$city").body()  // body() metodu eklendi
+        return client.get("$baseUrl/api/branches/city/$city").body()
     }
 }

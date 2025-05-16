@@ -11,7 +11,6 @@ import com.evginozan.kargotakip.domain.model.User
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 
-// Context extension olarak DataStore
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "user_preferences")
 
 class UserPreferences(private val context: Context) {
